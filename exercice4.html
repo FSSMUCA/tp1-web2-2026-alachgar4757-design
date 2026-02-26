@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 4 - Prompt, Alert et Confirm</title>
+</head>
+<body>
+    <h1>Exercice 4 - Interaction avec l'utilisateur</h1>
+    <p>Ce programme va interagir avec vous via des boîtes de dialogue.</p>
+
+    <script>
+        let prenom = prompt("Quel est votre prénom ?");
+
+        let age = prompt("Quel est votre âge ?");
+      
+        age = Number(age);
+
+        let anneeNaissance = 2025 - age;
+      
+        alert(`Bonjour ${prenom} ! Vous êtes né(e) vers ${anneeNaissance}.`);
+        
+        let afficherConsole = confirm("Afficher dans la console ?");
+        
+        if (afficherConsole === true) {
+            console.log("=== Informations de l'utilisateur ===");
+            console.log("Prénom :", prenom);
+            console.log("Âge :", age);
+            console.log("Année de naissance :", anneeNaissance);
+        } else {
+            console.log("L'utilisateur a choisi de ne pas afficher les informations.");
+        }
+
+        console.log("\n--- Note ---");
+        console.log("Si vous cliquez sur 'Annuler' dans un prompt, la variable sera null.");
+        console.log("Dans un cas réel, il faudrait gérer cette situation !");
+    </script>
+</body>
+</html>

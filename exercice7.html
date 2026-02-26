@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 7 - Calculateur de cercle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        div {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculatrice de cercle</h1>
+    
+    <div id="rayon">En attente du rayon...</div>
+    <div id="perimetre">En attente du calcul...</div>
+    <div id="surface">En attente du calcul...</div>
+
+    <script>
+    
+        const PI = Math.PI;
+        
+        let rayonSaisie = prompt("Entrez le rayon du cercle (en cm) :");
+        
+        if (rayonSaisie !== null) {
+            
+            let rayon = Number(rayonSaisie);
+            
+            if (!isNaN(rayon) && rayon > 0) {
+              
+                let perimetre = 2 * PI * rayon;
+                let surface = PI * rayon * rayon;
+                
+                document.getElementById("rayon").innerHTML = `Rayon : ${rayon} cm`;
+                document.getElementById("perimetre").innerHTML = `Périmètre : ${perimetre.toFixed(2)} cm`;
+                document.getElementById("surface").innerHTML = `Surface : ${surface.toFixed(2)} cm²`;
+                
+                console.log("=== Calculateur de cercle ===");
+                console.log(`Rayon saisi : ${rayon} cm`);
+                console.log(`Périmètre calculé : ${perimetre} cm`);
+                console.log(`Périmètre arrondi : ${perimetre.toFixed(2)} cm`);
+                console.log(`Surface calculée : ${surface} cm²`);
+                console.log(`Surface arrondie : ${surface.toFixed(2)} cm²`);
+                console.log(`Valeur de PI utilisée : ${PI}`);
+            } else {
+                
+                document.getElementById("rayon").innerHTML = " Erreur : Veuillez entrer un nombre valide et positif !";
+                document.getElementById("perimetre").innerHTML = " Calcul impossible";
+                document.getElementById("surface").innerHTML = " Calcul impossible";
+                console.error("Erreur : La valeur saisie n'est pas un nombre valide ou positif");
+            }
+        } else {
+            
+            document.getElementById("rayon").innerHTML = "⚠️ Saisie annulée par l'utilisateur";
+            document.getElementById("perimetre").innerHTML = "⚠️ En attente...";
+            document.getElementById("surface").innerHTML = "⚠️ En attente...";
+            console.log("Saisie annulée par l'utilisateur");
+        }
+    </script>
+</body>
+</html>

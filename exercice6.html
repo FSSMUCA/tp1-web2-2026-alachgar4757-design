@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 6 - Nommage et débogage</title>
+</head>
+<body>
+    <h1>Exercice 6 - Correction des erreurs de nommage</h1>
+    <p>Ouvrez la console (F12) pour voir les résultats !</p>
+
+    <script>
+        
+        let premierPrix = 100;         
+        let deuxiemePrix = 80;           
+        let prixMinimum = 50;              
+        let variableTest = 200;             
+        let prixMaximum = 300;              
+        
+        let prixMoyen = (premierPrix + deuxiemePrix + prixMinimum + variableTest + prixMaximum) / 5;
+      
+        console.log("=== Résultats après correction ===");
+        console.log("Prix moyen : " + prixMoyen);
+        console.log("Le prix minimum est : " + prixMinimum);
+        console.log("Le prix maximum est : " + prixMaximum);
+        
+        console.log("\n=== Détail des prix ===");
+        console.log("Premier prix :", premierPrix);
+        console.log("Deuxième prix :", deuxiemePrix);
+        console.log("Prix minimum :", prixMinimum);
+        console.log("Variable test :", variableTest);
+        console.log("Prix maximum :", prixMaximum);
+        
+      
+        let somme = premierPrix + deuxiemePrix + prixMinimum + variableTest + prixMaximum;
+        console.log("\n=== Vérification ===");
+        console.log(`Somme des prix : ${premierPrix} + ${deuxiemePrix} + ${prixMinimum} + ${variableTest} + ${prixMaximum} = ${somme}`);
+        console.log(`Prix moyen (somme/5) : ${somme} / 5 = ${prixMoyen}`);
+    </script>
+</body>
+</html>
